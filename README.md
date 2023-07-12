@@ -135,4 +135,7 @@ Great, the deployment is UP!
 ![ScreenShot](img/deployment_ok.png)
 
 <br><br>
+
+You can see the "LOG BUILD SUCCEEDED FILE .... .txt" at the root of this repo. CodeBuild is configured to put a log file on the S3.
+
 # Thanks for reading.

@@ -1,0 +1,149 @@
+[Container] 2023/07/12 10:37:47 Waiting for agent ping
+[Container] 2023/07/12 10:37:48 Waiting for DOWNLOAD_SOURCE
+[Container] 2023/07/12 10:37:55 Phase is DOWNLOAD_SOURCE
+[Container] 2023/07/12 10:37:55 CODEBUILD_SRC_DIR=/codebuild/output/src3858059554/src/git-codecommit.us-west-2.amazonaws.com/v1/repos/ecf_bancash_front
+[Container] 2023/07/12 10:37:55 YAML location is /codebuild/output/src3858059554/src/git-codecommit.us-west-2.amazonaws.com/v1/repos/ecf_bancash_front/buildspec.yml
+[Container] 2023/07/12 10:37:55 Setting HTTP client timeout to higher timeout for S3 source
+[Container] 2023/07/12 10:37:55 Processing environment variables
+[Container] 2023/07/12 10:37:55 Resolved 'nodejs' runtime alias 'latest' to '18'.
+[Container] 2023/07/12 10:37:55 Selecting 'nodejs' runtime version '18' based on manual selections...
+[Container] 2023/07/12 10:37:56 Moving to directory /codebuild/output/src3858059554/src/git-codecommit.us-west-2.amazonaws.com/v1/repos/ecf_bancash_front
+[Container] 2023/07/12 10:37:56 Configuring ssm agent with target id: codebuild:d08f1277-4d41-4e90-8c4f-f69204daf411
+[Container] 2023/07/12 10:37:56 Successfully updated ssm agent configuration
+[Container] 2023/07/12 10:37:56 Registering with agent
+[Container] 2023/07/12 10:37:56 Phases found in YAML: 4
+[Container] 2023/07/12 10:37:56  POST_BUILD: 5 commands
+[Container] 2023/07/12 10:37:56  INSTALL: 3 commands
+[Container] 2023/07/12 10:37:56  PRE_BUILD: 1 commands
+[Container] 2023/07/12 10:37:56  BUILD: 2 commands
+[Container] 2023/07/12 10:37:56 Phase complete: DOWNLOAD_SOURCE State: SUCCEEDED
+[Container] 2023/07/12 10:37:56 Phase context status code:  Message: 
+[Container] 2023/07/12 10:37:57 Entering phase INSTALL
+[Container] 2023/07/12 10:37:57 Running command echo -e "\n-- $APP_NAME ---> install process started"
+
+-- bancash_front ---> install process started
+
+[Container] 2023/07/12 10:37:57 Running command echo -e "Prepare nodejs and install the latest version of the Angular Framework.\n"
+Prepare nodejs and install the latest version of the Angular Framework.
+
+
+[Container] 2023/07/12 10:37:57 Running command npm install && npm install -g @angular/cli
+
+added 900 packages, and audited 901 packages in 12s
+
+104 packages are looking for funding
+  run `npm fund` for details
+
+1 moderate severity vulnerability
+
+To address all issues, run:
+  npm audit fix
+
+Run `npm audit` for details.
+
+added 239 packages in 6s
+
+36 packages are looking for funding
+  run `npm fund` for details
+
+[Container] 2023/07/12 10:38:26 Phase complete: INSTALL State: SUCCEEDED
+[Container] 2023/07/12 10:38:26 Phase context status code:  Message: 
+[Container] 2023/07/12 10:38:26 Entering phase PRE_BUILD
+[Container] 2023/07/12 10:38:26 Running command echo -e "\nInstall the dependencies needed to run the app INSIDE" echo -e "the CI/CD environment ;-)\n" npm install
+
+Install the dependencies needed to run the app INSIDE echo -e the CI/CD environment ;-)
+ npm install
+
+[Container] 2023/07/12 10:38:26 Phase complete: PRE_BUILD State: SUCCEEDED
+[Container] 2023/07/12 10:38:26 Phase context status code:  Message: 
+[Container] 2023/07/12 10:38:26 Entering phase BUILD
+[Container] 2023/07/12 10:38:26 Running command echo -e "\nLet's building our $APP_NAME app!\n"
+
+Let's building our bancash_front app!
+
+
+[Container] 2023/07/12 10:38:26 Running command ng build $APP_NAME
+- Generating browser application bundles (phase: setup)...
+✔ Browser application bundle generation complete.
+✔ Browser application bundle generation complete.
+- Copying assets...
+✔ Copying assets complete.
+- Generating index html...
+✔ Index html generation complete.
+
+Initial Chunk Files           | Names         |  Raw Size | Estimated Transfer Size
+main.edc77527a45db28e.js      | main          | 124.87 kB |                37.37 kB
+polyfills.5307c6e6693da8a1.js | polyfills     |  33.02 kB |                10.65 kB
+runtime.297b58a66564d130.js   | runtime       | 904 bytes |               517 bytes
+styles.ef46db3751d8e999.css   | styles        |   0 bytes |                       -
+
+| Initial Total | 158.77 kB |                48.52 kB
+
+Build at: 2023-07-12T10:38:47.166Z - Hash: 5cc8308d4885fb7e - Time: 18328ms
+
+[Container] 2023/07/12 10:38:47 Phase complete: BUILD State: SUCCEEDED
+[Container] 2023/07/12 10:38:47 Phase context status code:  Message: 
+[Container] 2023/07/12 10:38:47 Entering phase POST_BUILD
+[Container] 2023/07/12 10:38:47 Running command echo -e "\nbuild process finished, it's time to upload or LABOR to S3 now!\n"
+
+build process finished, it's time to upload or LABOR to S3 now!
+
+
+[Container] 2023/07/12 10:38:47 Running command ls -la
+total 500
+drwxr-xr-x   9 root root   4096 Jul 12 10:38 .
+drwxr-xr-x   3 root root     31 Jul 12 10:37 ..
+drwxr-xr-x   3 root root     19 Jul 12 10:38 .angular
+-rw-r--r--   1 root root    274 Jul 12 10:37 .editorconfig
+drwxr-xr-x   8 root root    177 Jul 12 10:37 .git
+-rwxr-xr-x   1 root root     66 Jul 12 10:37 .gitattributes
+-rwxr-xr-x   1 root root    633 Jul 12 10:37 .gitignore
+drwxr-xr-x   2 root root     66 Jul 12 10:37 .vscode
+-rw-r--r--   1 root root   5485 Jul 12 10:37 README.md
+-rw-r--r--   1 root root   2735 Jul 12 10:37 angular.json
+-rwxr-xr-x   1 root root    930 Jul 12 10:37 buildspec.yml
+drwxr-xr-x   3 root root     27 Jul 12 10:38 dist
+drwxr-xr-x   2 root root   4096 Jul 12 10:37 img
+drwxr-xr-x 561 root root  16384 Jul 12 10:38 node_modules
+-rw-r--r--   1 root root 424323 Jul 12 10:38 package-lock.json
+-rw-r--r--   1 root root   1048 Jul 12 10:37 package.json
+drwxr-xr-x   4 root root    122 Jul 12 10:37 src
+-rw-r--r--   1 root root    263 Jul 12 10:37 tsconfig.app.json
+-rw-r--r--   1 root root    901 Jul 12 10:37 tsconfig.json
+-rw-r--r--   1 root root    273 Jul 12 10:37 tsconfig.spec.json
+
+[Container] 2023/07/12 10:38:47 Running command cd dist/$APP_NAME
+
+[Container] 2023/07/12 10:38:47 Running command ls -la
+total 188
+drwxr-xr-x 2 root root    210 Jul 12 10:38 .
+drwxr-xr-x 3 root root     27 Jul 12 10:38 ..
+-rw-r--r-- 1 root root  12269 Jul 12 10:38 3rdpartylicenses.txt
+-rw-r--r-- 1 root root    948 Jul 12 10:38 favicon.ico
+-rw-r--r-- 1 root root    574 Jul 12 10:38 index.html
+-rw-r--r-- 1 root root 127862 Jul 12 10:38 main.edc77527a45db28e.js
+-rw-r--r-- 1 root root  33815 Jul 12 10:38 polyfills.5307c6e6693da8a1.js
+-rw-r--r-- 1 root root    904 Jul 12 10:38 runtime.297b58a66564d130.js
+-rw-r--r-- 1 root root      0 Jul 12 10:38 styles.ef46db3751d8e999.css
+
+[Container] 2023/07/12 10:38:47 Running command aws s3 sync . s3://ecfbancashfront --delete
+Completed 12.0 KiB/174.5 KiB (139.4 KiB/s) with 8 file(s) remainingupload: ./3rdpartylicenses.txt to s3://ecfbancashfront/3rdpartylicenses.txt
+Completed 12.0 KiB/174.5 KiB (139.4 KiB/s) with 7 file(s) remainingCompleted 12.9 KiB/174.5 KiB (126.3 KiB/s) with 7 file(s) remainingupload: ./favicon.ico to s3://ecfbancashfront/favicon.ico          
+Completed 12.9 KiB/174.5 KiB (126.3 KiB/s) with 6 file(s) remainingdelete: s3://ecfbancashfront/logs_build/3c697043-1249-4e68-9599-00411ff635e5.gz
+Completed 12.9 KiB/174.5 KiB (126.3 KiB/s) with 5 file(s) remainingCompleted 13.5 KiB/174.5 KiB (125.0 KiB/s) with 5 file(s) remainingupload: ./index.html to s3://ecfbancashfront/index.html            
+Completed 13.5 KiB/174.5 KiB (125.0 KiB/s) with 4 file(s) remainingupload: ./styles.ef46db3751d8e999.css to s3://ecfbancashfront/styles.ef46db3751d8e999.css
+Completed 13.5 KiB/174.5 KiB (125.0 KiB/s) with 3 file(s) remainingCompleted 138.3 KiB/174.5 KiB (931.3 KiB/s) with 3 file(s) remainingupload: ./main.edc77527a45db28e.js to s3://ecfbancashfront/main.edc77527a45db28e.js
+Completed 138.3 KiB/174.5 KiB (931.3 KiB/s) with 2 file(s) remainingCompleted 139.2 KiB/174.5 KiB (896.5 KiB/s) with 2 file(s) remainingupload: ./runtime.297b58a66564d130.js to s3://ecfbancashfront/runtime.297b58a66564d130.js
+Completed 139.2 KiB/174.5 KiB (896.5 KiB/s) with 1 file(s) remainingCompleted 172.2 KiB/174.5 KiB (976.8 KiB/s) with 1 file(s) remainingupload: ./polyfills.5307c6e6693da8a1.js to s3://ecfbancashfront/polyfills.5307c6e6693da8a1.js
+
+[Container] 2023/07/12 10:38:56 Phase complete: POST_BUILD State: SUCCEEDED
+[Container] 2023/07/12 10:38:56 Phase context status code:  Message: 
+[Container] 2023/07/12 10:38:56 Expanding base directory path: dist/bancash*
+[Container] 2023/07/12 10:38:56 Assembling file list
+[Container] 2023/07/12 10:38:56 Expanding dist/bancash*
+[Container] 2023/07/12 10:38:56 Expanding file paths for base directory dist/bancash_front
+[Container] 2023/07/12 10:38:56 Assembling file list
+[Container] 2023/07/12 10:38:56 Expanding **/*
+[Container] 2023/07/12 10:38:56 Found 7 file(s)
+[Container] 2023/07/12 10:38:56 Phase complete: UPLOAD_ARTIFACTS State:  
+[Container] 2023/07/12 10:38:56 Phase context status code:  Message: 

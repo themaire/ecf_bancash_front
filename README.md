@@ -3,8 +3,8 @@
 
 
 
-### CodeComit repository name : ecf_bancash_back
-### GitHub    repository name : ecf_bancash_back
+### CodeComit repository name : ecf_bancash_front
+### GitHub    repository name : ecf_bancash_front
 
 # Activité Type 2 : Déploiement d’une application en continu
 

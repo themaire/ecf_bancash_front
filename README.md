@@ -1,3 +1,8 @@
+# WARNING
+# This is a copy of the relative AWS CodeCommit repository due to the non easy CodeCommit share.
+
+
+
 ### CodeComit repository name : ecf_bancash_back
 ### GitHub    repository name : ecf_bancash_back
 

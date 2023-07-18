@@ -7,15 +7,40 @@ phases:
     runtime-versions:
       nodejs: latest
     commands:
-      - echo -e "\n-- $APP_NAME ---> install process started"
+      # - echo -e "\n-- $APP_NAME ---> install process started"
 
-      - echo -e "Prepare nodejs and install the latest version of the Angular Framework.\n"
-      - npm install && npm install -g @angular/cli
+      # - echo -e "Prepare nodejs and install the latest version of the Angular Framework.\n"
+      # - npm install && npm install -g @angular/cli
+
+      - npm install -g @angular/cli
+      # Install puppeteer as a dev dependency
+      - npm i -D puppeteer
+      - npm i -D @angular-devkit/build-angular
+      # Print out missing libs
+      - echo "Missing Libs" || ldd ./node_modules/puppeteer/.local-chromium/linux-549031/chrome-linux/chrome | grep not
+      # Upgrade apt
+      - apt-get upgrade
+      # Update libs
+      - apt-get update
+      # Install apt-transport-https
+      - apt-get install -y apt-transport-https
+      # Use apt to install the Chrome dependencies
+      - apt-get install -y libxcursor1
+      - apt-get install -y libgtk-3-dev
+      - apt-get install -y libxss1
+      - apt-get install -y libasound2
+      - apt-get install -y libnspr4
+      - apt-get install -y libnss3
+      - apt-get install -y libx11-xcb1
+      # Print out missing libs
+      - echo "Missing Libs" || ldd ./node_modules/puppeteer/.local-chromium/linux-549031/chrome-linux/chrome | grep not
+      # Install project dependencies
+      - npm install
   pre_build:
     commands:
-      echo -e "\nInstall the dependencies needed to run the app INSIDE"
-      echo -e "the CI/CD environment ;-)\n"
-      npm install
+      - echo -e "\nInstall the dependencies needed to run the app INSIDE"
+      - echo -e "the CI/CD environment ;-)\n"
+      - ng test --watch=false --browsers=ChromeHeadless
   build:
     commands:
       - echo -e "\nLet's building our $APP_NAME app!\n"

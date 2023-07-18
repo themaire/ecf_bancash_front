@@ -7,10 +7,10 @@ phases:
     runtime-versions:
       nodejs: latest
     commands:
-      # - echo -e "\n-- $APP_NAME ---> install process started"
+      - echo -e "\n-- $APP_NAME ---> install process started"
 
-      # - echo -e "Prepare nodejs and install the latest version of the Angular Framework.\n"
-      # - npm install && npm install -g @angular/cli
+      - echo -e "Prepare nodejs and install the latest version of the Angular Framework.\n"
+
 
       - npm install -g @angular/cli
       # Install puppeteer as a dev dependency
